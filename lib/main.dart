@@ -13,6 +13,9 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.green,
       ),
       home: Scaffold(
+        appBar: AppBar(
+          title: const Text('Simple App'),
+        ),
       ),
     );
   }

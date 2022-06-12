@@ -62,8 +62,10 @@ class SomeWidgetState extends State<SomeWidget> {
           title: const Text('Simple App'),
         ),
         body: Center(
-            child: SizedBox(
+            child: Container(
                 width: double.infinity,
+                height: double.infinity,
+                color: Colors.lightGreen,
                 child: Column(
                   children: [
                     ElevatedButton(

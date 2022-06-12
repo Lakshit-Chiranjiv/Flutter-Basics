@@ -9,6 +9,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Basics',
+      theme: ThemeData(
+        primarySwatch: Colors.green,
+      ),
     );
   }
 }

@@ -93,6 +93,9 @@ class SomeWidgetState extends State<SomeWidget> {
                     Row(
                       children: [
                         OutlinedButton(
+                          style: OutlinedButton.styleFrom(
+                            primary: Colors.green,
+                          ),
                           onPressed: () {
                             print('btn clicked');
                             setState(() {
@@ -105,6 +108,9 @@ class SomeWidgetState extends State<SomeWidget> {
                           width: 40,
                         ),
                         OutlinedButton(
+                          style: OutlinedButton.styleFrom(
+                            primary: Colors.red,
+                          ),
                           onPressed: () {
                             print('btn clicked');
                             setState(() {

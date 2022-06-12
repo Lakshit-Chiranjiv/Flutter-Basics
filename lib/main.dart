@@ -18,7 +18,9 @@ class MyApp extends StatelessWidget {
         ),
         body: Center(
             child: ElevatedButton(
-          onPressed: () {},
+          onPressed: () {
+            print('elevated btn clicked');
+          },
           child: Text('Elevated Button'),
         )),
         bottomNavigationBar: BottomNavigationBar(

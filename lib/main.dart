@@ -48,6 +48,7 @@ class SomeWidget extends StatefulWidget {
 
 class SomeWidgetState extends State<SomeWidget> {
   String btnLabel = "Unclicked";
+  int bottomNavBarCurrentItem = 0;
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -81,6 +82,12 @@ class SomeWidgetState extends State<SomeWidget> {
               label: 'Settings',
             )
           ],
+          currentIndex: bottomNavBarCurrentItem,
+          onTap: (int clickedIndex) {
+            setState(() {
+              bottomNavBarCurrentItem = clickedIndex;
+            });
+          },
         ),
       ),
     );

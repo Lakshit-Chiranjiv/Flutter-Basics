@@ -16,6 +16,7 @@ class MyApp extends StatelessWidget {
         appBar: AppBar(
           title: const Text('Simple App'),
         ),
+        body: const Text('App data'),
       ),
     );
   }

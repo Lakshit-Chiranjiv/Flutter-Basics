@@ -75,6 +75,9 @@ class SomeWidgetState extends State<SomeWidget> {
                       },
                       child: Text(btnLabel),
                     ),
+                    SizedBox(
+                      height: 40,
+                    ),
                     ElevatedButton(
                       onPressed: () {
                         print('btn clicked');
@@ -84,6 +87,36 @@ class SomeWidgetState extends State<SomeWidget> {
                       },
                       child: Text(btnLabel),
                     ),
+                    SizedBox(
+                      height: 40,
+                    ),
+                    Row(
+                      children: [
+                        OutlinedButton(
+                          onPressed: () {
+                            print('btn clicked');
+                            setState(() {
+                              btnLabel = "Now Clicked!!";
+                            });
+                          },
+                          child: Text(btnLabel),
+                        ),
+                        SizedBox(
+                          width: 40,
+                        ),
+                        OutlinedButton(
+                          onPressed: () {
+                            print('btn clicked');
+                            setState(() {
+                              btnLabel = "Now Clicked!!";
+                            });
+                          },
+                          child: Text(btnLabel),
+                        ),
+                      ],
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                    )
                   ],
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,

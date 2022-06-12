@@ -63,7 +63,10 @@ class SomeWidgetState extends State<SomeWidget> {
         body: Center(
             child: ElevatedButton(
           onPressed: () {
-            print('elevated btn clicked');
+            print('btn clicked');
+            setState(() {
+              btnLabel = "Now Clicked!!";
+            });
           },
           child: Text(btnLabel),
         )),

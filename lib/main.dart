@@ -62,14 +62,29 @@ class SomeWidgetState extends State<SomeWidget> {
           title: const Text('Simple App'),
         ),
         body: Center(
-            child: ElevatedButton(
-          onPressed: () {
-            print('btn clicked');
-            setState(() {
-              btnLabel = "Now Clicked!!";
-            });
-          },
-          child: Text(btnLabel),
+            child: Column(
+          children: [
+            ElevatedButton(
+              onPressed: () {
+                print('btn clicked');
+                setState(() {
+                  btnLabel = "Now Clicked!!";
+                });
+              },
+              child: Text(btnLabel),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                print('btn clicked');
+                setState(() {
+                  btnLabel = "Now Clicked!!";
+                });
+              },
+              child: Text(btnLabel),
+            ),
+          ],
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
         )),
         bottomNavigationBar: BottomNavigationBar(
           items: const [

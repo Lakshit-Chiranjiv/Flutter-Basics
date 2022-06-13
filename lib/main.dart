@@ -62,42 +62,14 @@ class SomeWidgetState extends State<SomeWidget> {
           title: const Text('Simple App'),
         ),
         body: Center(
-            child: Container(
-                width: double.infinity,
-                height: double.infinity,
-                color: Colors.lightGreen,
-                child: Column(
-                  children: [
-                    ElevatedButton(
-                      onPressed: () {
-                        print('btn clicked');
-                        setState(() {
-                          btnLabel = "Now Clicked!!";
-                        });
-                      },
-                      child: Text(btnLabel),
-                    ),
-                    SizedBox(
-                      height: 40,
-                    ),
-                    ElevatedButton(
-                      onPressed: () {
-                        print('btn clicked');
-                        setState(() {
-                          btnLabel = "Now Clicked!!";
-                        });
-                      },
-                      child: Text(btnLabel),
-                    ),
-                    SizedBox(
-                      height: 40,
-                    ),
-                    Row(
+            child: bottomNavBarCurrentItem == 0
+                ? Container(
+                    width: double.infinity,
+                    height: double.infinity,
+                    color: Colors.lightGreen,
+                    child: Column(
                       children: [
-                        OutlinedButton(
-                          style: OutlinedButton.styleFrom(
-                            primary: Colors.green,
-                          ),
+                        ElevatedButton(
                           onPressed: () {
                             print('btn clicked');
                             setState(() {
@@ -107,12 +79,9 @@ class SomeWidgetState extends State<SomeWidget> {
                           child: Text(btnLabel),
                         ),
                         SizedBox(
-                          width: 40,
+                          height: 40,
                         ),
-                        OutlinedButton(
-                          style: OutlinedButton.styleFrom(
-                            primary: Colors.red,
-                          ),
+                        ElevatedButton(
                           onPressed: () {
                             print('btn clicked');
                             setState(() {
@@ -121,14 +90,53 @@ class SomeWidgetState extends State<SomeWidget> {
                           },
                           child: Text(btnLabel),
                         ),
+                        SizedBox(
+                          height: 40,
+                        ),
+                        Row(
+                          children: [
+                            OutlinedButton(
+                              style: OutlinedButton.styleFrom(
+                                primary: Colors.purple,
+                              ),
+                              onPressed: () {
+                                print('btn clicked');
+                                setState(() {
+                                  btnLabel = "Now Clicked!!";
+                                });
+                              },
+                              child: Text(btnLabel),
+                            ),
+                            SizedBox(
+                              width: 40,
+                            ),
+                            OutlinedButton(
+                              style: OutlinedButton.styleFrom(
+                                primary: Colors.red,
+                              ),
+                              onPressed: () {
+                                print('btn clicked');
+                                setState(() {
+                                  btnLabel = "Now Clicked!!";
+                                });
+                              },
+                              child: Text(btnLabel),
+                            ),
+                          ],
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                        )
                       ],
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.center,
-                    )
-                  ],
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                ))),
+                    ))
+                : Container(
+                    color: Colors.pink,
+                    child: const SizedBox(
+                      child: Text("Settings page"),
+                      height: double.infinity,
+                      width: double.infinity,
+                    ))),
         bottomNavigationBar: BottomNavigationBar(
           items: const [
             BottomNavigationBarItem(

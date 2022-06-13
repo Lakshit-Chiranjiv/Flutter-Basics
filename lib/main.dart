@@ -132,10 +132,15 @@ class SomeWidgetState extends State<SomeWidget> {
                     ))
                 : Container(
                     color: Colors.pink,
-                    child: const SizedBox(
-                      child: Text("Settings page"),
-                      height: double.infinity,
-                      width: double.infinity,
+                    height: double.infinity,
+                    width: double.infinity,
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        Text("Settings page"),
+                        Image.network('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9u6_4OALQDJaY9EPmzp8E-35kSySl_vWqmg&usqp=CAU')
+                      ],
                     ))),
         bottomNavigationBar: BottomNavigationBar(
           items: const [

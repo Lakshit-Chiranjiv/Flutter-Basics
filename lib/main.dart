@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
@@ -35,7 +36,8 @@ class MyApp extends StatelessWidget {
       //     ],
       //   ),
       // ),
-      home: SomeWidget(),
+      home: FirstPage(),
+      // home: SomeWidget(),
     );
   }
 }
@@ -83,12 +85,9 @@ class SomeWidgetState extends State<SomeWidget> {
                         ),
                         ElevatedButton(
                           onPressed: () {
-                            print('btn clicked');
-                            setState(() {
-                              btnLabel = "Now Clicked!!";
-                            });
+                            print('nav btn clicked');
                           },
-                          child: Text(btnLabel),
+                          child: Text('Go to Second Page'),
                         ),
                         SizedBox(
                           height: 40,
@@ -166,17 +165,69 @@ class SomeWidgetState extends State<SomeWidget> {
   }
 }
 
+class FirstPage extends StatelessWidget {
+  const FirstPage({Key? key}) : super(key: key);
 
-class SecondPage extends StatelessWidget{
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: Text('First Page')),
+      body: Container(
+        height: double.infinity,
+        width: double.infinity,
+        color: Colors.red,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Text('First Page'),
+            SizedBox(
+              height: 50,
+            ),
+            ElevatedButton(
+                onPressed: () {
+                  print('nav btn clicked');
+                  Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext context) {
+                    return const SecondPage();
+                  }));
+                },
+                child: Text('Next Page'))
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class SecondPage extends StatelessWidget {
   const SecondPage({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context){
-    return Container(
-      height: double.infinity,
-      width: double.infinity,
-      color: Colors.red,
-      child: const Text("Second Page"),
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Second Page'),
+      ),
+      body: Container(
+        height: double.infinity,
+        width: double.infinity,
+        color: Colors.red,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Text('Second Page'),
+            SizedBox(
+              height: 50,
+            ),
+            ElevatedButton(
+                onPressed: () {
+                  print('back nav btn clicked');
+                },
+                child: Text('Back'))
+          ],
+        ),
+      ),
     );
   }
 }

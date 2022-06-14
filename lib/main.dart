@@ -139,7 +139,8 @@ class SomeWidgetState extends State<SomeWidget> {
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         Text("Settings page"),
-                        Image.network('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9u6_4OALQDJaY9EPmzp8E-35kSySl_vWqmg&usqp=CAU')
+                        Image.network('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9u6_4OALQDJaY9EPmzp8E-35kSySl_vWqmg&usqp=CAU'),
+                        Image.asset('images/sea.jpg')
                       ],
                     ))),
         bottomNavigationBar: BottomNavigationBar(

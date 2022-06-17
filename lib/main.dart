@@ -223,6 +223,7 @@ class SecondPage extends StatelessWidget {
             ElevatedButton(
                 onPressed: () {
                   print('back nav btn clicked');
+                  Navigator.of(context).pop();
                 },
                 child: Text('Back'))
           ],

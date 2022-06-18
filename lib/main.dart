@@ -207,6 +207,7 @@ class SecondPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text('Second Page'),
+        automaticallyImplyLeading: false,
       ),
       body: Container(
         height: double.infinity,

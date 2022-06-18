@@ -180,7 +180,12 @@ class FirstPage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Text('First Page'),
+            GestureDetector(
+              onTap: () {
+                print("First page text clicked");
+              },
+              child: const Text('First Page'),
+            ),
             SizedBox(
               height: 50,
             ),
